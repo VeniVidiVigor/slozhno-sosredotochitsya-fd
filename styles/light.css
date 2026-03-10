@@ -9,4 +9,28 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: #ff8dcb;
+  --secondary-color: #353430;
+  --header-footer-color: #ffc2e6;
+  --rec-color: #353430;
+  --nav-color: #353430;
+  --btn-hover-color: #32312d66;
+  --btn-active-visible-color: #353430;
+  --title-color: #353430;
+  --background-image: url(/images/cover-image-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Дублируем только те же переменные, что и выше */
+    --accent-color: #ff8dcb;
+    --secondary-color: #353430;
+    --header-footer-color: #ffc2e6;
+    --rec-color: #353430;
+    --nav-color: #353430;
+    --btn-hover-color: #32312d66;
+    --btn-active-visible-color: #353430;
+    --title-color: #353430;
+    --background-image: url(/images/cover-image-light.png);
+  }
 }
