@@ -18,7 +18,11 @@
   --btn-active-visible-color: #353430;
   --title-color: #353430;
   --background-color: #fff1f7;
-  --background-image: url(/images/cover-image-light.png);
+  --background-image: url(../images/cover-image-light.png);
+}
+
+.theme-light .decorative-text {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -33,7 +37,7 @@
     --btn-active-visible-color: #353430;
     --title-color: #353430;
     --background-color: #fff1f7;
-    --background-image: url(/images/cover-image-light.png);
+    --background-image: url(../images/cover-image-light.png);
   }
 
   .theme-auto .decorative-text {

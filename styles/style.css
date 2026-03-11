@@ -15,30 +15,48 @@
   min-height: 668px;
 }
 
-.header::before,
-.header::after,
-.footer::before,
-.footer::after {
+.header::before {
   content: "";
   position: absolute;
-  z-index: 1;
-  display: block;
-}
-
-.header::before,
-.footer::before {
   top: 10px;
   right: 10px;
+  z-index: 1;
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--rec-color);
   border-right: 1px solid var(--rec-color);
 }
 
-.header::after,
-.footer::after {
+.header::after {
+  content: "";
+  position: absolute;
   bottom: 10px;
   left: 10px;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--rec-color);
+  border-left: 1px solid var(--rec-color);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--rec-color);
+  border-right: 1px solid var(--rec-color);
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--rec-color);
@@ -70,14 +88,10 @@
   background-color: var(--accent-color);
 }
 
-.theme-light .decorative-text {
-  display: none;
-}
-
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  padding-right: 10px;
+  padding: 10px 10px 0px 0px;
 }
 
 .header__theme-menu-list {
@@ -87,10 +101,9 @@
 
 .header__theme-menu-button {
   display: inline-block;
-  width: 70px;
-  height: 26px;
+  min-width: 70px;
+  min-height: 26px;
   border: 1px solid transparent;
-  border-color: transparent;
   color: var(--nav-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
@@ -98,6 +111,11 @@
   text-align: center;
   text-transform: lowercase;
   background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--btn-active-visible-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -125,8 +143,8 @@
 
 .header__paragraph {
   justify-self: center;
+  align-self: start;
   max-width: 355px;
-  max-height: 118px;
   margin: 55px 0px 66px;
   padding: 0px;
   color: #000028;
@@ -169,6 +187,7 @@
   font-size: var(--main-font-size);
   line-height: 23.4px;
   background-color: var(--accent-color);
+  block-size: min-content;
 }
 
 .section__article-card-paragraph {
@@ -179,22 +198,22 @@
   line-height: 23.4px;
 }
 
-main a {
+.main a {
   text-decoration: none;
   text-shadow: 1.5px 1.5px 0 var(--accent-color);
 }
 
-main a:hover {
+.main a:hover {
   border-bottom: 1px solid var(--secondary-color);
 }
 
-main a:focus-visible {
+.main a:focus-visible {
   border: 1px solid var(--secondary-color);
   outline: none;
 }
 
-.five-simple-rules {
-  margin-top: 20px;
+.card__title_font_normal {
+  margin-top: -11px;
   font-weight: 400;
 }
 
@@ -214,14 +233,12 @@ main a:focus-visible {
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  height: 100vh;
-  min-height: 668px;
-  margin-bottom: -60px;
+  min-height: max(668px, 100vh);
 }
 
 .footer__title {
   grid-row: 2;
-  padding: 0px 0px 15px 15px;
+  padding-left: 15px;
   color: var(--header-footer-color);
   font-family: var(--main-font-family);
   font-weight: 700;
@@ -237,24 +254,13 @@ main a:focus-visible {
 
   .header {
     grid-template-rows: 1fr 1fr 1fr;
-    min-height: 1024px;
   }
 
-  .header::before,
-  .footer::before {
-    top: 20px;
-    right: 20px;
-    width: 25px;
-    height: 25px;
-  }
+  .header::before { top: 20px; right: 20px; }
+  .footer::before { top: 20px; right: 20px; }
 
-  .header::after,
-  .footer::after {
-    bottom: 20px;
-    left: 20px;
-    width: 25px;
-    height: 25px;
-  }
+  .header::after { bottom: 20px; left: 20px; }
+  .footer::after { bottom: 20px; left: 20px; }
 
   .decorative-text {
     top: 20px;
@@ -300,6 +306,18 @@ main a:focus-visible {
 
   .concentration .section__article {
     grid-column: 1 / 5;
+  }
+
+  .tips-section {
+    grid-template-rows: 4px;
+  }
+
+  .tips-section .section__article {
+    grid-column: 2;
+  }
+
+  .card__title_font_normal {
+    margin-top: 16px;
   }
 
   .img-section {
@@ -377,7 +395,6 @@ main a:focus-visible {
 
   .header__paragraph {
     min-width: 491px;
-    max-height: min-content;
     margin: 50px 20px;
   }
 
@@ -393,6 +410,14 @@ main a:focus-visible {
   .concentration .section__article-card {
     grid-row: 2;
     max-width: 315px;
+  }
+
+  .tips-section {
+    grid-template-rows: 12px;
+  }
+
+  .card__title_font_normal {
+    margin-top: 20px;
   }
 
   .footer__title {
