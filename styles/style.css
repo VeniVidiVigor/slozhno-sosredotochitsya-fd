@@ -216,6 +216,7 @@ main a:focus-visible {
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   min-height: 668px;
+  margin-bottom: -60px;
 }
 
 .footer__title {
