@@ -17,6 +17,7 @@
   --btn-hover-color: #32312d66;
   --btn-active-visible-color: #353430;
   --title-color: #353430;
+  --background-color: #fff1f7;
   --background-image: url(/images/cover-image-light.png);
 }
 
@@ -31,6 +32,7 @@
     --btn-hover-color: #32312d66;
     --btn-active-visible-color: #353430;
     --title-color: #353430;
+    --background-color: #fff1f7;
     --background-image: url(/images/cover-image-light.png);
   }
 

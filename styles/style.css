@@ -4,7 +4,7 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
   gap: 40px;
-  background: #000028 var(--background-image) no-repeat center / cover fixed;
+  background: var(--background-color) var(--background-image) no-repeat center / cover fixed;
 }
 
 .header {
