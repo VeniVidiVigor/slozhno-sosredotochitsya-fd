@@ -4,7 +4,8 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
   gap: 40px;
-  background: var(--background-color) var(--background-image) no-repeat center / cover fixed;
+  background: var(--background-color) var(--background-image) no-repeat center /
+    cover fixed;
 }
 
 .header {
@@ -15,7 +16,7 @@
   min-height: 668px;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   top: 10px;
@@ -27,31 +28,7 @@
   border-right: 1px solid var(--rec-color);
 }
 
-.header::after {
-  content: "";
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  z-index: 1;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--rec-color);
-  border-left: 1px solid var(--rec-color);
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--rec-color);
-  border-right: 1px solid var(--rec-color);
-}
-
-.footer::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   bottom: 10px;
@@ -179,6 +156,11 @@
   gap: 20px;
 }
 
+.section__tips-card {
+  display: grid;
+  gap: 20px;
+}
+
 .section__article-card-title {
   margin-bottom: 10px;
   color: #000028;
@@ -190,6 +172,10 @@
   block-size: min-content;
 }
 
+.card__title_margin {
+  margin-bottom: 0px;
+}
+
 .section__article-card-paragraph {
   color: var(--secondary-color);
   font-family: var(--main-font-family);
@@ -198,27 +184,26 @@
   line-height: 23.4px;
 }
 
-.main a {
+.link-paragraph {
   text-decoration: none;
   text-shadow: 1.5px 1.5px 0 var(--accent-color);
 }
 
-.main a:hover {
+.link-paragraph:hover {
   border-bottom: 1px solid var(--secondary-color);
 }
 
-.main a:focus-visible {
+.link-paragraph:focus-visible {
   border: 1px solid var(--secondary-color);
   outline: none;
 }
 
 .card__title_font_normal {
-  margin-top: -11px;
   font-weight: 400;
 }
 
 .section__article-img {
-  max-width: 355px;
+  max-width: 100%;
 }
 
 .img-article {
@@ -238,7 +223,7 @@
 
 .footer__title {
   grid-row: 2;
-  padding-left: 15px;
+  justify-self: center;
   color: var(--header-footer-color);
   font-family: var(--main-font-family);
   font-weight: 700;
@@ -256,11 +241,15 @@
     grid-template-rows: 1fr 1fr 1fr;
   }
 
-  .header::before { top: 20px; right: 20px; }
-  .footer::before { top: 20px; right: 20px; }
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
 
-  .header::after { bottom: 20px; left: 20px; }
-  .footer::after { bottom: 20px; left: 20px; }
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
 
   .decorative-text {
     top: 20px;
@@ -309,15 +298,7 @@
   }
 
   .tips-section {
-    grid-template-rows: 4px;
-  }
-
-  .tips-section .section__article {
-    grid-column: 2;
-  }
-
-  .card__title_font_normal {
-    margin-top: 16px;
+    grid-template-columns: 1fr 2fr;
   }
 
   .img-section {
@@ -410,14 +391,6 @@
   .concentration .section__article-card {
     grid-row: 2;
     max-width: 315px;
-  }
-
-  .tips-section {
-    grid-template-rows: 12px;
-  }
-
-  .card__title_font_normal {
-    margin-top: 20px;
   }
 
   .footer__title {
