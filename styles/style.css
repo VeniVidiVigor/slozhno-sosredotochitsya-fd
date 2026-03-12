@@ -169,7 +169,6 @@
   font-size: var(--main-font-size);
   line-height: 23.4px;
   background-color: var(--accent-color);
-  block-size: min-content;
 }
 
 .card__title_margin {
@@ -390,7 +389,7 @@
 
   .concentration .section__article-card {
     grid-row: 2;
-    max-width: 315px;
+    min-width: 315px;
   }
 
   .footer__title {
