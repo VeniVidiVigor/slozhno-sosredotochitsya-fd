@@ -202,7 +202,7 @@
 }
 
 .section__article-img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .img-article {
@@ -294,10 +294,6 @@
 
   .concentration .section__article {
     grid-column: 1 / 5;
-  }
-
-  .tips-section {
-    grid-template-columns: 1fr 2fr;
   }
 
   .img-section {
